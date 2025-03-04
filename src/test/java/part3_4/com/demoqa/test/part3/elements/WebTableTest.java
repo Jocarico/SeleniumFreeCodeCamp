@@ -8,12 +8,15 @@ public class WebTableTest extends BaseTest {
 
     @Test
     public void testWebTable(){
-        var webTablePage = homePage.goToElements().clickWebTables();
-        webTablePage.clickEdit("alden@example.com");
-        webTablePage.setAge("34");
-        webTablePage.clickSubmitButton();
-        String actualAge = webTablePage.getTableAge("alden@example.com");
+        String email = "alden@example.com";
         String expectedAge = "34";
+        String age = "34";
+
+        var webTablePage = homePage.goToElements().clickWebTables();
+        webTablePage.clickEdit(email);
+        webTablePage.setAge(age);
+        webTablePage.clickSubmitButton();
+        String actualAge = webTablePage.getTableAge(email);
         Assert.assertEquals(actualAge, expectedAge,
                 "\n Actual & expected ages do not  match \n");
     }
