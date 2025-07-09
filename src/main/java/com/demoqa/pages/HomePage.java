@@ -14,7 +14,7 @@ public class HomePage extends BasePage {
     private By formsCard = By.xpath("//div[@id='app']//h5[text()='Forms']");
     private By elementsCard = By.xpath("//div[@id='app']//h5[text()='Elements']");
     private By widgetCard = By.xpath("//div[@id='app']//h5[text()='Widgets']");
-    private By alertsFrameWindowsCard = By.xpath("//div[@id='app']//h5[contains(text()='Alerts')]");
+    private By alertsFrameWindowsCard = By.xpath("//div[@id='app']//h5[text()='Alerts, Frame & Windows']");
 
     public FormsPage goToForms(){
         scrollToElementJS(formsCard);
@@ -37,7 +37,7 @@ public class HomePage extends BasePage {
     public Alerts_Frames_WindowsPage goToAlertsFramesWindowsCard() {
         scrollToElementJS(alertsFrameWindowsCard);
         click(alertsFrameWindowsCard);
-        return new Alerts_Frames_WindowsPage()
+        return new Alerts_Frames_WindowsPage();
     }
 
 }
